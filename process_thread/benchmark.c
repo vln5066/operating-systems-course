@@ -119,7 +119,11 @@ double benchmark_clone() {
             exit(1);
         }
 
+<<<<<<< HEAD
         pid_t pid = clone(child_func, stack + STACK_SIZE, CLONE_VM | CLONE_FS | SIGCHLD, NULL);
+=======
+        pid_t pid = clone(child_func, stack + STACK_SIZE,  CLONE_FILES| SIGCHLD, NULL);
+>>>>>>> upstream/main
         if (pid < 0) {
             perror("clone");
             exit(1);
